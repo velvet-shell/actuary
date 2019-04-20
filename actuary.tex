@@ -74,7 +74,9 @@ $S(t) = X_{1}+X_{2}+...+X_{N(t)}$
     \item $X_i$ - величина $i$-ой страховой выплаты.
 \end{itemize}
 \par\medskip \noindent
-Пусть $t\geq 0$ и $h> 0$ . Тогда разность $N(t+h)-N(t)$ является числом страховых случаев, а разность $S(t+h) -S(t)$ - суммарными страховыми выплатами, которые происходят в интервале между $t$ и $t + h$.
+Пусть $t\geq 0$ и $h> 0$ . Тогда разность $N(t+h)-N(t)$ является числом страховых случаев,
+а разность $S(t+h) -S(t)$ - суммарными страховыми выплатами,
+которые происходят в интервале между $t$ и $t + h$.
 \end{frame}
 
 
@@ -121,14 +123,21 @@ $S(t) = X_{1}+X_{2}+...+X_{N(t)}$
 \begin{frame}
 \frametitle{Модель с непрерывным временем}
 \noindent
-Если в $S(t)$ случайные величины $X_{1}, X_{2}, X_{3}, ...$ независимы и одинаково распределены с функцией распределения $P(x)$, и если они также независимы от процесса $\big\{N(t), t\geq 0\big\}$, то процесс $\big\{S(t), t\geq 0\big\}$ называется \textbf{сложным пуассоновским процессом}.
+Если в $S(t)$ случайные величины $X_{1}, X_{2}, X_{3}, ...$ независимы и одинаково распределены
+с функцией распределения $P(x)$, и если они также независимы от процесса
+$\big\{N(t), t\geq 0\big\}$, то процесс $\big\{S(t), t\geq 0\big\}$ называется
+\textbf{сложным пуассоновским процессом}.
 \begin{block} {Свойства:}
 \begin{enumerate}
-    \item[1)] Если $t\geq 0 $ и $h > 0$, то распределение c.в. $S(t + h) - S(t)$ является сложным пуассоновским c параметром $\lambda h$ функцией распределения $P(x)$, то есть:
+    \item[1)] Если $t\geq 0 $ и $h > 0$, то распределение c.в. $S(t + h) - S(t)$
+    является сложным пуассоновским c параметром $\lambda h$ и функцией распределения $P(x)$, то есть:
     \begin{equation*}
-        \mathbb{P}[S(t+h)-S(t)\leq x \mid S(s)\ \forall s \leq t] = 
+        \mathbb{P}[S(t+h)-S(t)\leq x] = 
         \sum_{k=0}^{ \infty }e^{- \lambda h}(\lambda h)^{k} \frac{P^{\ast k}(x) }{k!}
     \end{equation*}
+    \item[2)] В любой момент $t$ вероятность того, что следующий страховой случай произойдет
+    между моментами $t + h$ и $t + h + dh$ и что величина выплат не превосходит $x$, равна
+    $e^{-\lambda h}(\lambda dh)P(x)$;
     \item[2)] Приращения процесса $S(t)$ независимы и стационарны;
     \item[3)] $\mathbb{E}[S(t)] = \lambda t p_1,\ \mathbb{D}[S(t)] = \lambda t p_2$.
 \end{enumerate}
@@ -140,12 +149,18 @@ $S(t) = X_{1}+X_{2}+...+X_{N(t)}$
 \begin{frame}
 \frametitle{Некоторые понятия}
 \begin{block}{Определение 1}
-Рассмотрим период длины $t > 0$, где размер собранной  премии равен $ct$, а $S(t)$ - величина суммарных страховых выплат, распределение которой - сложное пуассоновское, причём $\mathbb{E}N(t) = {\lambda}t$.
-\\ \textbf{Коэффициент Лундберга ${R}$} - наименьшее положительное решение уравнения $$M_{S(t)-ct}(r) = \mathbb{E}[e^{r(S(t)-ct)}] = e^{-rct}M_{S(t)}(r) = $$ $$= e^{-rct}e^{{\lambda}t[M_{X}(r)-1]} = 1 \Leftrightarrow {\lambda}[M_{X}(r)-1] = cr,$$или, при $c = (1+{\theta}){\lambda}p_{1}r$, уравнения 
+Рассмотрим период длины $t > 0$, где размер собранной  премии равен $ct$, а $S(t)$
+- величина суммарных страховых выплат, распределение которой - сложное пуассоновское,
+причём $\mathbb{E}N(t) = {\lambda}t$.
+\\ \textbf{Коэффициент Лундберга ${R}$} - наименьшее положительное решение уравнения
+$$M_{S(t)-ct}(r) = \mathbb{E}[e^{r(S(t)-ct)}] = e^{-rct}M_{S(t)}(r) = $$
+$$= e^{-rct}e^{{\lambda}t[M_{X}(r)-1]} = 1 \Leftrightarrow {\lambda}[M_{X}(r)-1] = cr,$$
+или, при $c = (1+{\theta}){\lambda}p_{1}r$, уравнения 
 \begin{center}$1+(1+\theta)p_{1}r = M_{X}(r)$ \textbf{(2.1)} \end{center}
 \end{block}
 \begin{block}{Определение 2}
-\textbf{Вероятность разорения $\psi(u)$} равна $\mathbb{P}(T < \infty)$, где $T = min\{t: U(t) < 0\}$. Она выражается с помощью коэффициента Лундберга.
+\textbf{Вероятность разорения $\psi(u)$} равна $\mathbb{P}(T < \infty)$,
+где $T = min\{t: U(t) < 0\}$. Она выражается с помощью коэффициента Лундберга.
 \end{block}
 \end{frame}
 
@@ -182,11 +197,14 @@ $S(t) = X_{1}+X_{2}+...+X_{N(t)}$
 \end{frame}
 
 \begin{frame}
+\frametitle{Некоторые понятия}
 \begin{block}{Теорема о вероятности разорения}
-Если $U(t)$ является процессом рискового резерва, его процесс суммарных страховых выплат $S(t)$ является сложным пуассоновским и если $c > \lambda p_{1}$, т. е. рисковая надбавка положительна, то для $u \geq 0$ справедливо $$
-    \psi(u) = \frac{\Exp(-Ru)}{\mathbb{E}[\Exp(-RU(T))|T < \infty]} \: \textbf{(2.2)}, $$ где $R$ - наименьший положительный корень уравнения \textbf{(2.1)}.
+Если $U(t)$ является процессом рискового резерва, его процесс суммарных страховых выплат $S(t)$
+является сложным пуассоновским и если $c > \lambda p_{1}$, т. е. рисковая надбавка положительна,
+то для $u \geq 0$ справедливо 
+$$ \psi(u) = \frac{\Exp(-Ru)}{\mathbb{E}[\Exp(-RU(T))|T < \infty]} \: \textbf{(2.2)}, $$
+где $R$ - наименьший положительный корень уравнения \textbf{(2.1)}.
 \end{block}
-
 \end{frame}
 
 
@@ -209,8 +227,7 @@ $S(t) = X_{1}+X_{2}+...+X_{N(t)}$
 \begin{equation}
 (1 + \theta)r^2 - \theta\beta r = 0
 \end{equation}
-заметим, что $r = 0$ - решение, а наименьшим положительным решением уравнения 2.1
-(коэф. Лундберга) оказывается
+Положительное решение уравнения является коэф. Лундберга:
 \begin{equation}
 R = \frac{\theta\beta}{1 + \theta}
 \end{equation}
@@ -237,7 +254,7 @@ p_{-U(T)|T < \infty}(y) = \frac{d}{dy}(1-e^{-\beta y}) = \beta e^{-\beta y} \mat
 \end{equation}
 
 \begin{equation}
-\mathbb{E}[\Exp(-RU(T)) \ | \ T<\infty] = \beta\int_{0}^{\infty} e^{-\beta y} e^{Ry}dy =
+\mathbb{E}[e^{-RU(T)} \ | \ T<\infty] = \beta\int_{0}^{\infty} e^{-\beta y} e^{Ry}dy =
 \frac{\beta}{\beta - R}
 \end{equation}
 \end{frame}
@@ -249,7 +266,7 @@ p_{-U(T)|T < \infty}(y) = \frac{d}{dy}(1-e^{-\beta y}) = \beta e^{-\beta y} \mat
 \noindent
 Воспользуемся вычисленным ранее коэффициентом Лундберга и теоремой:
 \begin{equation}
-\psi(u) = \frac{e^{-Ru}}{\mathbb{E}[\Exp(-RU(T))|T < \infty]} = \frac{(\beta-R)e^{-Ru}}{\beta}
+\psi(u) = \frac{e^{-Ru}}{\mathbb{E}[e^{-RU(T)}|T < \infty]} = \frac{(\beta-R)e^{-Ru}}{\beta}
 \end{equation}
 
 \begin{equation}
@@ -272,7 +289,8 @@ R = \frac{\theta\beta}{1 + \theta} \Rightarrow
     \end{align}
     \item Производящая функция моментов сложного пуассоновского процесса:
     \begin{align}
-    & M_S (r) = \mathbb{E}[e^{rS}]=\mathbb{E}\big[\mathbb{E}[e^{rS}|N]\big]=\mathbb{E}[M_X (r)^N]=\notag \\
+    & M_S (r) = \mathbb{E}[e^{rS}]=\mathbb{E}\big[\mathbb{E}[e^{rS}|N]\big]=\mathbb{E}[M_X (r)^N]=
+    \notag \\
     & = \mathbb{E}[e^{N \ln{M_X (r)}}]= M_N (\ln{M_X (r)}) \\
     & M_N (r) = e^{\lambda t(e^r - 1)} \Rightarrow M_S (r) = e^{\lambda t[M_X (r) - 1]}
     \end{align}
@@ -283,6 +301,8 @@ R = \frac{\theta\beta}{1 + \theta} \Rightarrow
 \subsection{Доказательство теоремы}
 \begin{frame}
 \frametitle{Доказательство теоремы}
+\noindent
+Рассмотрим доказательство теоремы о вероятности разорения:
 \begin{equation}
 \E[e^{-rU(t)}] = \E[e^{-rU(t)}|T \leq t]\Pro(T \leq t) + \E[e^{-rU(t)}|T > t]\Pro(T > t)
 \end{equation}
@@ -321,7 +341,10 @@ e^{-Ru} = \E[e^{-RU(T)}|T \leq t]\Pro(T \leq t) + \E[e^{-RU(t)}|T > t]\Pro(T > t
 \end{equation}
 \noindent
 Для доказательства теоремы остается доказать сходимость второго слагаемого к $0$,
-используя неравенство Чебышева.
+используя неравенство Чебышева, после чего получается требуемое равенство:
+\begin{equation}
+\psi(u) = \frac{e^{-Ru}}{\mathbb{E}[e^{-RU(T)}|T < \infty]}
+\end{equation}
 \end{frame}
 
 
