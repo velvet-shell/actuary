@@ -177,7 +177,7 @@ $\big\{N(t), t\geq 0\big\}$, то процесс $\big\{S(t), t\geq 0\big\}$ н�
             axis lines = left,
             xlabel = {$r$},
             ylabel = {}, 
-            every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+            every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
             ticks = none,
         ]
         \addplot[
@@ -200,6 +200,7 @@ $\big\{N(t), t\geq 0\big\}$, то процесс $\big\{S(t), t\geq 0\big\}$ н�
     Определение коэффициента Лундберга $R$
 \end{center}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Некоторые понятия}
@@ -311,7 +312,7 @@ R = \frac{\theta\beta}{1 + \theta} \Rightarrow
 \begin{frame}
 \frametitle{Доказательство теоремы}
 \noindent
-Рассмотрим доказательство теоремы о вероятности разорения:
+Докажем теорему о вероятности разорения:
 \begin{equation}
 \E[e^{-rU(t)}] = \E[e^{-rU(t)}|T \leq t]\Pro(T \leq t) + \E[e^{-rU(t)}|T > t]\Pro(T > t)
 \end{equation}
